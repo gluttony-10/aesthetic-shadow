@@ -20,7 +20,11 @@ Then follow these steps:
 
 ## Updating
 
-- Pull changes `git pull`
+- Pull changes ```git pull```
 - Activate the venv `venv\scripts\activate`
-- Re-Install all requirements `pip install -r requirements.txt `
+- Re-Install the requirements `pip install -r requirements.txt `
 
+## Usage
+
+- Activate the venv `venv\scripts\activate`
+- python 
