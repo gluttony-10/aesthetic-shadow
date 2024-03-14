@@ -20,11 +20,12 @@ Then follow these steps:
 
 ## Updating
 
-- Pull changes ```git pull```
+- Pull changes `git pull`
 - Activate the venv `venv\scripts\activate`
 - Re-Install the requirements `pip install -r requirements.txt `
 
 ## Usage
 
 - Activate the venv `venv\scripts\activate`
-- python 
+- For single image `python inference.py --image text/test.jpg`
+- For batch `python batch.py --path test --output outputs --threshold 0.5 --batch 8`
