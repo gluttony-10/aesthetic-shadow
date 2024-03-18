@@ -10,7 +10,7 @@ import argparse
 def get_args():
     parser = argparse.ArgumentParser(description='Startup Parameters')
     parser.add_argument("--device", type=str, default=0, help="Cuda")
-    parser.add_argument("--image", type=str, default="test/test (1).jpg", help="Image")
+    parser.add_argument("--image", type=str, default="test/01.jpg", help="Image")
     return parser.parse_args()
 args = get_args()
 
