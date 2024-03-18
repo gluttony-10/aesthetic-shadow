@@ -17,7 +17,7 @@ def get_args():
     return parser.parse_args()
 args = get_args()
 
-pipe = pipeline("image-classification", model="shadowlilac/aesthetic-shadow-v2", device=args.device)
+pipe = pipeline("image-classification", model="shadowlilac/aesthetic-shadow-v2", device=f"cuda:{args.device}")
 
 # Define the paths for the input folder and output folders
 input_folder = args.path
