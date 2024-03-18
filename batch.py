@@ -1,7 +1,4 @@
 import torch
-torch.backends.cuda.matmul.allow_tf32 = True
-torch.backends.cudnn.allow_tf32 = True
-
 import os
 from transformers import pipeline
 import shutil
@@ -9,6 +6,7 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser(description='Startup Parameters')
+    parser.add_argument("--tf32", action='store_true', help="Use tf32")
     parser.add_argument("--device", type=str, default=0, help="Cuda")
     parser.add_argument("--path", type=str, default="test", help="Input folder")
     parser.add_argument("--output", type=str, default="outputs", help="Output folder")
@@ -16,6 +14,10 @@ def get_args():
     parser.add_argument("--batch", type=int, default=8, help="Batch size")
     return parser.parse_args()
 args = get_args()
+
+if args.tf32:
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
 
 pipe = pipeline("image-classification", model="shadowlilac/aesthetic-shadow-v2", device=f"cuda:{args.device}")
 
