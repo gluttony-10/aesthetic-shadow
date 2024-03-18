@@ -12,8 +12,8 @@ def get_args():
     parser.add_argument("--device", type=str, default=0, help="Cuda")
     parser.add_argument("--path", type=str, default="test", help="Input folder")
     parser.add_argument("--output", type=str, default="outputs", help="Output folder")
-    parser.add_argument("--threshold", type=str, default=0.5, help="HQ threshold")
-    parser.add_argument("--batch", type=str, default=8, help="Batch size")
+    parser.add_argument("--threshold", type=float, default=0.5, help="HQ threshold")
+    parser.add_argument("--batch", type=int, default=8, help="Batch size")
     return parser.parse_args()
 args = get_args()
 
