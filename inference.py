@@ -14,7 +14,7 @@ def get_args():
     return parser.parse_args()
 args = get_args()
 
-pipe = pipeline("image-classification", model="shadowlilac/aesthetic-shadow-v2", device=args.device)
+pipe = pipeline("image-classification", model="shadowlilac/aesthetic-shadow-v2", device=cuda:{args.device})
 
 # Input image file
 single_image_file = args.image
